@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue1</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src ="https://unpkg.com/vue">
+    </script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>Loops</h1>
+      <ul>
+        <li v-for="character in characters">{{character}}</li>
+      </ul>
+      <ul>
+        <li v-for="(person,index) in persons">{{index}}.{{person.name}}-{{person.age}}</li>
+      </ul>
+
+      <template v-for="(person,index) in persons">
+        <h3>{{index}}.{{person.name}}</h3>
+        <p>{{person.age}}</p>
+      </template>
+
+      <template v-for="person in persons">
+        <div v-for="(val,key) in person">
+          <p>{{key}}-{{val}}</p>
+        </div>
+      </template>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
